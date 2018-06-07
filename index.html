@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS</title>
+    <link href="app.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+<div id="vue-app">
+    <h1>{{title}}</h1>
+    <a v-bind:href="website">My Site</a>
+    <input type="text" v-bind:value="name"/>
+    <p v-html="websiteTag"></p>
+<button v-on:click="changeTitle">Change App Title</button>
+</div>
+<div id="vue-app-events">
+    <h1>{{title}}</h1>
+    <button v-on:click.once="add(1)">Add a year</button>
+    <button v-on:click="subtract(1)">Subtract a year</button>
+    <button v-on:dblclick="add(10)">Add a 10 year</button>
+    <button v-on:dblclick="subtract(10)">Subtract 10 year</button>
+    <p>My age is {{age}}</p>
+    <div id="canvas" v-on:mousemove="updateXY">{{x}},{{y}}</div>
+    <a v-on:click.prevent="click" href="http://meetup.com">meetup</a>
+</div>
+<div id="vue-app-data-binding">
+    <h1>{{title}}</h1>
+    <label>Name: </label>
+    <input type="text" v-model="name"/>
+    <span> {{name}}</span>
+    <label>Age:</label>
+    <input type="text" v-model="age"/>
+    <span> {{age}}</span>
+</div>
+<div id="vue-app-computed-properties">
+    <h1>{{title}}</h1>
+    <button v-on:click="a++">Add to A</button>
+    <button v-on:click="b++">Add to B</button>
+    <p>A {{a}}</p>
+    <p>A {{b}}</p>
+    <p> Age + A = {{addToA}}</p>
+    <p> Age + B = {{addToB}}</p>
+</div>
+<div id="vue-app-css">
+    <h1>{{title}}</h1>
+    <h2>Example 1</h2>
+    <!-- <div v-on:click="available =!available" v-bind:class="{available: available}">
+     <span>FOO</span></div>-->
+    <h2>Example 2</h2>
+    <button v-on:click="nearby =!nearby">Toggle Nearby</button>
+    <button v-on:click="available =!available">Toggle Available</button>
+
+    <div v-bind:class="compClasses">
+
+        <span>FOO</span>
+    </div>
+</div>
+    <div id="vue-app-conditionals">
+        <h1>{{title}}</h1>
+        <button v-on:click="error = !error">Toggle Error</button>
+        <button v-on:click="success = !success">Toggle Success</button>
+        <!--<p v-if="error">foooooooooooooooooooooooooooo</p>
+        <p v-else-if="success">SUCCESS!</p> -->
+        <p v-show="error">ERROR</p>
+        <p v-show="success">Success</p>
+    </div>
+
+<script src="app.js"></script>
+</body>
+</html>
