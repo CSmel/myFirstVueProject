@@ -18,7 +18,7 @@ var one = new Vue({
     }
 });
 
-two.title = "Changed from the outside!";
+
 
 var two = new Vue({
     el: '#vue-app-events',
@@ -114,6 +114,21 @@ var six = new Vue({
         title: "vue-app-conditionals",
         error: false,
         success: false
+    },
+    methods: {},
+    computed: {}
+});
+var seven = new Vue({
+    el: '#vue-app-for-loop',
+    data: {
+        title: "vue-app-conditionals",
+        characters:['Mario', 'Luigi', 'Yoshi', 'Bower'],
+        ninjas:[
+            {name: 'Mel', age: 32},
+            {name: 'Joey', age: 14},
+            {name: 'Keke', age: 2}
+        ]
+
     },
     methods: {},
     computed: {}
